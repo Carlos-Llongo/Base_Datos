@@ -1,0 +1,55 @@
+body {
+  width: 99%;
+  height: auto;
+}
+
+.logo {
+  background: #9ba795;
+  color: #300ce7;
+  font-family: geogebra;
+  font-size: 3em;
+  margin: 0em 1em 0em 1em;
+}
+.logo img {
+  width: 3%;
+  margin: 0.2em 1em 0em 1em;
+  float: right;
+}
+.logo h3 {
+  height: 50px;
+  text-align: center;
+}
+
+h4 {
+  height: 50px;
+  text-align: center;
+}
+.enlaces {
+  height: 50px;
+  text-align: center;
+}
+
+.enlaces a {
+  font-family: arial;
+  font-size: 1em;
+  padding: 0.2em;
+  margin: 8em;
+  line-height: 2.9em;
+}
+
+.enlaces a:hover {
+  background: #f899e1;
+  color: #f90808;
+  border-radius: 7px;
+}
+
+.imagen img {
+  width: 90%;
+}
+
+.footer {
+  background: #b3afaf;
+  color: #86f9f2;
+  margin-top: 4em;
+  text-align: center;
+}

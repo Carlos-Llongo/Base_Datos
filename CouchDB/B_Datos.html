@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B_Datos_CouchDB</title>
+	<link rel="stylesheet" href="css/Hardware.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+</head>
+<body>
+	<div class="logo">
+       <h3>Desarrollo basado en plataformas web </h3>
+   </div>
+       <h4>Actividad 2 Bimestre 1</h4>
+    <div class="container">
+		<div class="enlaces">
+        <ul>
+              <li><a href="index.html">Regresar</a></li>
+        </ul>
+        </div>
+        <div class="section">
+            <button class="submin" id="boton">Obtener información de CouchDB</button>
+            <table>
+                <thead>
+                    <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Pais</th>
+                    <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="respuesta">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+
+document.querySelector('#boton').addEventListener('click', traerDatos);
+function traerDatos(){
+    const imporDatos = new XMLHttpRequest();
+    imporDatos.open('GET', 'Json/jsonjjj.json', true);
+    imporDatos.send();
+    imporDatos.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+           let respuesta = document.querySelector('#respuesta');
+           respuesta.innerHTML = '';
+
+           for(let item of datos){
+
+            console.log(item);
+            respuesta.innerHTML += `
+                <tr>
+               <td>${item.nombre}</td>
+               <td>${item.apellido}</td>
+               <td>${item.pais}</td>
+               <td>${item.email}</td>
+               </tr>              
+               `
+           }
+        }
+    }
+}
+
+
+
+</script>
+</html>
